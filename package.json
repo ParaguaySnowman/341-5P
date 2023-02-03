@@ -1,0 +1,12 @@
+{
+  "name": "341-5p",
+  "version": "1.0.0",
+  "description": "Week 5 Personal Assignment",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Parker Mortensen",
+  "license": "ISC"
+}
