@@ -1,21 +1,23 @@
-const swaggerAutogen = require('swagger-autogen')();
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongodb = require('./db/connect');
 
-const doc = {
-  info: {
-    title: 'My API',
-    description: 'Personal Finance API',
-  },
-  host: 'localhost:8080',
-  schemes: ['http'],
-};
+const port = process.env.PORT || 8080;
+const app = express();
 
-const outputFile = './swagger.json';
-const endpointsFiles = ['./routes/index.js'];
+app
+  .use(bodyParser.json())
+  .use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  })
+  .use('/', require('./routes'));
 
-// generate swagger.json
-swaggerAutogen(outputFile, endpointsFiles, doc);
-
-// Run server after it gets generated
-// swaggerAutogen(outputFile, endpointsFiles, doc).then(async () => {
-//   await import('./index.js');
-// });
+mongodb.initDb((err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    app.listen(port);
+    console.log(`Connected to DB and listening on ${port}`);
+  }
+});
