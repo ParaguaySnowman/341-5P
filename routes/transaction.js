@@ -5,6 +5,6 @@ const transactions = require('../controllers/transaction.js');
 routes.post('/', transactions.createTransaction);
 
 // Retrieve a single Transaction with id
-routes.get('/:transaction_id', transactions.findOneTransaction);
+routes.get('/:_id', transactions.findOneTransaction);
 
 module.exports = routes;
