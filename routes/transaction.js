@@ -7,4 +7,4 @@ routes.post('/', transactions.create);
 // Retrieve a single Transaction with id
 routes.get('/:transaction_id', transactions.findOne);
 
-module.exports = routes;s
+module.exports = routes;
