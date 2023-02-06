@@ -25,7 +25,7 @@ exports.createTransaction = (req, res) => {
     account: req.body.account,
     taxRelated: req.taxRelated
   });
-  // Save Temple in the database
+  // Save Transaction in the database
   transaction
     .save(transaction)
     .then((data) => {
