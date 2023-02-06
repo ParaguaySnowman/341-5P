@@ -1,16 +1,7 @@
-const routes = require('express').Router();
-const transaction = require('./transaction');
+const express = require('express');
+const router = express.Router();
 
-routes.use('/', require('./swagger'));
-routes.use('/transactions', transaction);
-routes.use(
-  '/',
-  (docData = (req, res) => {
-    let docData = {
-      documentationURL: 'https://nathanbirch.github.io/nathan-byui-api-docs',
-    };
-    res.send(docData);
-  })
-);
+router.use('/', require('./swagger'));
+router.use('/transaction', require('./transaction'));
 
-module.exports = routes;
+module.exports = router;

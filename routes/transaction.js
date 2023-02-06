@@ -1,10 +1,12 @@
-const routes = require('express').Router();
-const transactions = require('../controllers/transaction.js');
+//Node Modules
+const express = require('express');
+const router = express.Router();
 
-// Create a new Transaction
-routes.post('/', transactions.createTransaction);
+//Controllers
+const contactsController = require('../controllers/transaction');
 
-// Retrieve a single Transaction with id
-routes.get('/:_id', transactions.findOneTransaction);
+router.get('/:id', contactsController.findOneTransaction);
 
-module.exports = routes;
+router.post('/', contactsController.createTransaction);
+
+module.exports = router;
