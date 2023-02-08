@@ -21,7 +21,7 @@ content-type: application/json
 GET https://cse341-week-5-personal-assignment.onrender.com/transaction/63e05d1e4b81be01fcb1946a HTTP/1.1
 
 ### 
-POST https://cse-341-week-5-personal-assignment.onrender.com/transaction HTTP/1.1
+POST https://cse341-week-5-personal-assignment.onrender.com/transaction HTTP/1.1
 content-type: application/json
 
 {
