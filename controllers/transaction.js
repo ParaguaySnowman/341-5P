@@ -23,6 +23,10 @@ const findOneTransaction = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const result = await mongodb.getDb().db().collection('transactions').find({ _id: userId });
   result.toArray().then((lists) => {
+    if (lists.length === 0) {
+      res.status(404).json({ error: 'Transaction not found' });
+      return;
+    }
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists[0]);
   });

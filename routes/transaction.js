@@ -3,10 +3,10 @@ const express = require('express');
 const router = express.Router();
 
 //Controllers
-const contactsController = require('../controllers/transaction');
+const transactionController = require('../controllers/transaction');
 
-router.get('/:id', contactsController.findOneTransaction);
+router.get('/:id', transactionController.findOneTransaction);
 
-router.post('/', contactsController.createTransaction);
+router.post('/', transactionController.createTransaction);
 
 module.exports = router;

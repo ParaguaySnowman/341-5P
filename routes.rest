@@ -5,5 +5,11 @@ POST https://cse-341-week-5-personal-assignment.onrender.com/transaction HTTP/1.
 content-type: application/json
 
 {
-"amount":1.01, "date":"1/1/2000", "merchant":"Walmart", "category":"groceries", "description":"null", "account":101, "taxRelated":true
+  "amount": "1.01",
+  "date": "1/1/2000",
+  "merchant": "Walmart",
+  "category": "groceries",
+  "description": "null",
+  "account": "101",
+  "taxRelated": "true"
 }
