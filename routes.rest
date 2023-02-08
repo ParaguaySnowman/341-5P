@@ -1,6 +1,26 @@
+###Local Host
+
+###
+GET http://localhost:8080/transaction/63e05d1e4b81be01fcb1946a HTTP/1.1
+
+###
+POST http://localhost:8080/transaction HTTP/1.1
+content-type: application/json
+
+{
+  "amount": "1.01",
+  "date": "1/1/2000",
+  "merchant": "Walmart",
+  "category": "groceries",
+  "description": "null",
+  "account": "101",
+  "taxRelated": "true"
+}
+
+###Render
 GET https://cse341-week-5-personal-assignment.onrender.com/transaction/63e05d1e4b81be01fcb1946a HTTP/1.1
 
-### Create contact 
+### 
 POST https://cse-341-week-5-personal-assignment.onrender.com/transaction HTTP/1.1
 content-type: application/json
 
